@@ -7,7 +7,7 @@ class BWP_GXS_MODULE_SPECIALS extends BWP_GXS_MODULE {
 		$this->build_data();
 	}
 
-	function build_data() {
+	public function build_data() {
         global $wpdb;
         $sql = "SELECT p.ID, p.post_modified, COUNT( p.ID ) FROM {$wpdb->posts} p, {$wpdb->postmeta} m WHERE p.ID = m.post_id AND m.meta_key IN( 'latitude', 'longitude' ) GROUP BY p.ID, p.post_modified HAVING COUNT( p.ID ) = 2";
 		$data = array();

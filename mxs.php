@@ -26,7 +26,7 @@ along with this program; if not, write to the Free Software
 Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 */
 
-/*
+/**
  * Flush rewrite rules
  */
 function mxs_flush_rules() {
@@ -47,6 +47,7 @@ add_action( 'bwp_gxs_modules_built', 'mxs_add_modules' );
 
 /**
  * Add rule for specials.xml
+ * @return array
  */
 function mxs_add_rules() {
     return array( 'specials\.xml' => 'index.php?gxs_module=specials' );
@@ -55,6 +56,7 @@ add_filter( 'bwp_gxs_rewrite_rules', 'mxs_add_rules' );
 
 /**
  * Add custom module dir
+ * @return string
  */
 function mxs_module_dir() {
     return plugin_dir_path( __FILE__ ) . 'modules/';
